@@ -68,3 +68,50 @@ ansible [core 2.17.14]
 exit
 vagrant destroy -f ubuntu
 ```
+
+# Challenge 3 — Installation d’Ansible dans un environnement virtuel Python sur Rocky Linux
+
+## Objectif
+Configurer une machine **Rocky Linux** avec **Vagrant**, installer **Python 3.12**, créer un environnement virtuel, et y installer **Ansible**.
+
+## Étapes à suivre
+
+```bash
+# 1. Démarrer la machine virtuelle Rocky Linux et se connecter
+vagrant up rocky
+vagrant ssh rocky
+
+# 2. Mettre à jour le système
+sudo dnf update
+
+# 3. Rechercher les interpréteurs Python disponibles et installer python et pip
+sudo dnf search python | grep ^python | grep -i interpreter
+sudo dnf install python3.12 python3.12-pip
+
+# 4. Installer virtualenv via pip
+sudo pip install virtualenv
+
+# 5. Créer un environnement virtuel pour Ansible et l'activer
+python -m venv ~/.venv/ansible
+source ~/.venv/ansible/bin/activate
+
+# 6. Installer Ansible dans l’environnement virtuel
+pip install ansible
+
+# 7. Vérifier l’installation
+ansible --version
+
+ansible [core 2.15.13]
+  config file = None
+  configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/vagrant/.venv/ansible/lib64/python3.9/site-packages/ansible
+  ansible collection location = /home/vagrant/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/vagrant/.venv/ansible/bin/ansible
+  python version = 3.9.21 (main, Aug 19 2025, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-5)] (/home/vagrant/.venv/ansible/bin/python)
+  jinja version = 3.1.6
+  libyaml = True
+
+# 8. Se déconnecter et supprimer la VM
+exit
+vagrant destroy -f rocky  
+```
