@@ -27,5 +27,6 @@ sudo apt install -y ansible
 # 7. Vérifier la version installée
 ansible --version
 
-# 8. Consulter l’historique des commandes
-history
+# 8. Se déconnecter et supprimer la VM
+exit
+vagrant destroy -f ubuntu
