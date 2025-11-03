@@ -88,17 +88,14 @@ sudo dnf update
 sudo dnf search python | grep ^python | grep -i interpreter
 sudo dnf install python3.12 python3.12-pip
 
-# 4. Installer virtualenv via pip
-sudo pip install virtualenv
-
-# 5. Créer un environnement virtuel pour Ansible et l'activer
+# 4. Créer un environnement virtuel pour Ansible et l'activer
 python -m venv ~/.venv/ansible
 source ~/.venv/ansible/bin/activate
 
-# 6. Installer Ansible dans l’environnement virtuel
+# 5. Installer Ansible dans l’environnement virtuel
 pip install ansible
 
-# 7. Vérifier l’installation
+# 6. Vérifier l’installation
 ansible --version
 
 ansible [core 2.15.13]
@@ -111,7 +108,7 @@ ansible [core 2.15.13]
   jinja version = 3.1.6
   libyaml = True
 
-# 8. Se déconnecter et supprimer la VM
+# 7. Se déconnecter et supprimer la VM
 exit
 vagrant destroy -f rocky  
 ```
