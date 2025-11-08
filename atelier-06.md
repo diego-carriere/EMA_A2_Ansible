@@ -44,7 +44,6 @@ vagrant@control:~$ sudo apt install ansible
 test via `ping` de ansible vers les targets
 ```bash
 vagrant@control:~$ ansible all -i target01,target02,target03 -m ping
-
 # target01 | SUCCESS => {
 #    "ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},
 #    "changed": false,
@@ -61,7 +60,7 @@ vagrant@control:~$ ansible all -i target01,target02,target03 -m ping
 #    "ping": "pong"
 #}
 ```
-## 5. Création et setup du projet Ansible
+## 3. Création et setup du projet Ansible
 
 Création du dossier et du fichier de configuration :
 ```bash
@@ -105,7 +104,7 @@ ansible_user=vagrant
 ansible_become=yes
 ```
 
-## 10. Tests finaux Ansible
+## 4. Tests finaux Ansible
 Vérification du ping
 ```bash
 vagrant@control:~/monprojet$ ansible all -m ping -o
@@ -123,7 +122,7 @@ vagrant@control:~/monprojet$ ansible all -a "head -n 1 /etc/shadow"
 # target01 | CHANGED | rc=0 >>
 # root:*:19977:0:99999:7:::
 ```
-## 11. Nettoyage de l’environnement Vagrant
+## 5. Nettoyage de l’environnement Vagrant
 
 ```bash
 vagrant@control:~/monprojet$ exit
