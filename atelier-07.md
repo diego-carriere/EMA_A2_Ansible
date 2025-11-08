@@ -3,7 +3,7 @@
 Ce guide reprend les commandes de l'exercice `à vous de jouer` du cours [ci-joint](https://formations.microlinux.fr/ansible/idempotence/#creer-et-recreer-un-utilisateur).
 
 ## 1. Setup
-````bash
+```bash
 [ema@sandbox:rendu] $ cd ~/formation-ansible/atelier-07
 [ema@sandbox:atelier-07] $ vagrant up
 [ema@sandbox:atelier-07] $ vagrant ssh ansible
